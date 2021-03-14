@@ -59,7 +59,7 @@ impl Scheduler{
 
         self.notifier.notify(&NotifyData{
            site_name:"Local".to_owned(), message: "The bot is starting".to_owned()
-        });
+        }).expect("Notification should be sent");
 
         for item in &self.work_items {
             item.start();
