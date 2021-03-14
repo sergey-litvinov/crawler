@@ -1,7 +1,7 @@
 use log::{trace, warn};
 use anyhow::{Result};
 
-use crawler::{Parser, Notifier};
+use crawler::{Parser, Notifier, NotifyData};
 use crate::{
     settings::*,
     parsers::html_parser::HtmlParser,
@@ -56,6 +56,11 @@ impl Scheduler{
     }
 
     pub fn start(&self) {
+
+        self.notifier.notify(&NotifyData{
+           site_name:"Local".to_owned(), message: "The bot is starting".to_owned()
+        });
+
         for item in &self.work_items {
             item.start();
             // sleep for some time to avoid so many requests the same time

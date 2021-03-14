@@ -1,0 +1,8 @@
+version: "2.0"
+services:
+
+  crawler:
+    image: sergeylitvinov/crawler:latest
+    environment:
+      APP_TELEGRAM-TOKEN: "SomeToken"
+      APP_TELEGRAM-CHAT_ID: "SomeID"
