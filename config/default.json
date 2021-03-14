@@ -1,0 +1,88 @@
+{
+  "telegram": {
+    "token": "",
+    "chat_id": ""
+  },
+  "sites": [
+    {
+      "name": "Hotline",
+      "endpoint": "https://hotline.ua/computer-igrovye-pristavki/sony-playstation-5-digital-edition-825-gb/load-prices/",
+      "parser_type": "Json",
+      "interval_seconds": 300,
+      "preflight_request": "https://hotline.ua/computer-igrovye-pristavki/sony-playstation-5-digital-edition-825-gb/prices/",
+      "csrf_token_selector": "meta[name='csrf-token']",
+      "csrf_token_header": "X-CSRF-Token",
+      "max_allowed_price_uah": 14000
+    },
+    {
+      "name": "Hotline",
+      "endpoint": "https://hotline.ua/computer-igrovye-pristavki/sony-playstation-5-825-gb/load-prices/",
+      "parser_type": "Json",
+      "interval_seconds": 300,
+      "preflight_request": "https://hotline.ua/computer-igrovye-pristavki/sony-playstation-5-825-gb/prices/",
+      "csrf_token_selector": "meta[name='csrf-token']",
+      "csrf_token_header": "X-CSRF-Token",
+      "max_allowed_price_uah": 17500
+    },
+    {
+      "name": "Comfy",
+      "endpoint": "https://comfy.ua/ua/igrovaja-pristavka-sony-playstation-5.html",
+      "parser_type": "Html",
+      "interval_seconds": 300,
+      "selector": "#preorder > a",
+      "ignored_texts": [
+        "Попереднє замовлення"
+      ]
+    },
+    {
+      "name": "Comfy",
+      "endpoint": "https://comfy.ua/ua/igrovaja-pristavka-sony-playstation-5-digital-edition.html",
+      "parser_type": "Html",
+      "interval_seconds": 300,
+      "selector": "#preorder > a",
+      "ignored_texts": [
+        "Попереднє замовлення"
+      ]
+    },
+    {
+      "name": "Citrus",
+      "endpoint": "https://www.citrus.ua/igrovye-pristavki/igrovaya-konsol-sony-playstation-5-digital-edition-668783.html",
+      "parser_type": "Html",
+      "interval_seconds": 300,
+      "selector": "#buy-block > div > div > button",
+      "ignored_texts": [
+        "Предзаказ"
+      ]
+    },
+    {
+      "name": "Citrus",
+      "endpoint": "https://www.citrus.ua/igrovye-pristavki/igrovaya-konsol-sony-playstation-5-663700.html",
+      "parser_type": "Html",
+      "interval_seconds": 300,
+      "selector": "#buy-block > div > div > button",
+      "ignored_texts": [
+        "Предзаказ"
+      ]
+    },
+    {
+      "name": "Foxtrot",
+      "endpoint": "https://www.foxtrot.com.ua/ru/shop/igrovye_pristavki_sony_sony-ps5.html",
+      "parser_type": "Html",
+      "interval_seconds": 300,
+      "selector": "#anchor-1 > div > div > div.product-box__right > div > div.product-box__main > div > div.product-box__main-buy > div.button.buy-button.product-box__main-buy__button",
+      "ignored_texts": [
+        "<p>Уведомить о наличии</p>"
+      ]
+    },
+    {
+      "name": "Foxtrot",
+      "endpoint": "https://www.foxtrot.com.ua/ru/shop/igrovye_pristavki_sony_ps5-bluray.html",
+      "parser_type": "Html",
+      "interval_seconds": 300,
+      "selector": "#anchor-1 > div > div > div.product-box__right > div > div.product-box__main > div > div.product-box__main-buy > div.button.buy-button.product-box__main-buy__button",
+      "ignored_texts": [
+        "<p>Уведомить о наличии</p>"
+      ]
+    }
+  ]
+}

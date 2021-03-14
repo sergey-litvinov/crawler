@@ -1,0 +1,21 @@
+[package]
+name = "crawler"
+version = "0.1.0"
+authors = ["Sergey Litvinov <phoenixxua@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+config = "^0.10.1"
+serde = "^1.0.124"
+serde_derive = "^1.0.124"
+serde_json = "^1.0.64"
+log = "^0.4.14"
+env_logger = "^0.8.3"
+anyhow = "^1.0.38"
+reqwest = {version ="^0.11.1", features = ["blocking", "json", "cookies", "gzip"]}
+url = "^2.2.1"
+ctrlc =  { version = "3.1.8", features = ["termination"] }
+scraper = "^0.12.0"
+error-chain = "^0.12.4"
