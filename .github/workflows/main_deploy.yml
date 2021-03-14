@@ -1,0 +1,23 @@
+  
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      env:
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: docker build . --file Dockerfile --tag sergeylitvinov/crawler:$(date +%F) --tag sergeylitvinov/crawler:latest &&
+        docker login --username ${{secrets.DOCKER_USERNAME}} --password ${{secrets.DOCKER_PASSWORD}} &&
+        docker push sergeylitvinov/crawler:$(date +%F) &&
+        docker push sergeylitvinov/crawler:latest &&
+        docker logout  
