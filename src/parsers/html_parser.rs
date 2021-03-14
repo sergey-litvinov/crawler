@@ -43,7 +43,6 @@ impl Parser for HtmlParser{
                 .text()?;
 
         trace!("Got response of {:?} bytes", response.len());
-        trace!("Parsing document");
         let selector = &self.site.selector.as_ref().unwrap();
         let document = scraper::Html::parse_document(&response);
         let query = scraper::Selector::parse(selector).unwrap();

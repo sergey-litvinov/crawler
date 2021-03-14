@@ -49,7 +49,6 @@ impl JsonParser {
                 .text()?;
 
         trace!("Got response of {:?} bytes", response.len());
-        trace!("Parsing document for csrf token");
         let selector = self.site.csrf_token_selector.as_ref().unwrap();
         let document = scraper::Html::parse_document(&response);
         let query = scraper::Selector::parse(selector).unwrap();
